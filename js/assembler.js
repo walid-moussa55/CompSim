@@ -41,7 +41,7 @@ class Assembler {
                 if(this.m_labels[value] !== undefined){
                     word += this.m_labels[value].toString(16).padStart(2,"0");
                 }else if(!isNaN(parseInt(value))){
-                    word += value;
+                    word += value.toString(16).padStart(2,"0");
                 }else{word += "00";}
                 hexCode.push(word);
             }

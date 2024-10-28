@@ -49,6 +49,6 @@ class Assembler {
                 hexCode.push(instruction.toString(16).padStart(4,"0"));
             }
         }
-        console.log(hexCode);
+        console.log(hexCode.join(""));
     }
 }

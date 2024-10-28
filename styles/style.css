@@ -1,0 +1,125 @@
+html {
+    scroll-behavior: smooth; /* Enables smooth scrolling */
+}
+
+/* General body styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header styling */
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Positions title to the left and nav to the right */
+}
+
+header h1 {
+    margin: 0;
+    font-size: 24px;
+}
+
+/* Styling for navigation links */
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 20px;
+    cursor: pointer;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+nav ul li:hover {
+    text-decoration: underline;
+}
+
+/* About section styling */
+div.about {
+    padding: 30px;
+    margin: 20px auto;
+    max-width: 840px;
+    background-color: #fdfdfd;
+    border-left: 6px solid #4CAF50; /* Green bar on the left */
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+div.about p {
+    margin: 0;
+    color: #333;
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+/* Main content styling */
+div {
+    padding: 20px;
+    margin: 10px auto;
+    max-width: 700px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Textarea styling */
+textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-family: monospace;
+    font-size: 16px;
+    resize: vertical;
+}
+
+#debugging {
+    margin-right: 5px;
+}
+
+label {
+    display: inline-flex;
+    align-items: center;
+    margin-top: 10px;
+    font-size: 16px;
+}
+
+/* Button styling */
+button {
+    padding: 10px 20px;
+    margin-top: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+/* Output section styling */
+pre {
+    background-color: #f0f0f0;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-family: monospace;
+    font-size: 16px;
+    white-space: pre-wrap; /* Ensures long lines wrap */
+}

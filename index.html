@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Home - Computer Simulator</title>
+    <link rel="stylesheet" href="./style/style.css">
+    <script src="js/computer.js"></script>
+    <script src="js/assembler.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Computer Simulation</h1>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="./about.html">About</a></li>
+                <li><a href="#computer">Start</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="about">
+        <p>This site going to help understanding computer architechture and how it work.</p>
+        <a href="about.html"><button>Learn about</button></a>
+    </div>
+    <div id="computer">
+        <h2>Assembly</h2>
+        <textarea name="assembly" id="assembly" cols="200" rows="4" placeholder="Enter assembly code here..."></textarea>
+        <br>
+        <button id="assembleBtn">Assembling</button>
+    </div>
+    <div>
+        <h2>Computer</h2>
+        <textarea name="binarycode" id="binarycode" cols="67" rows="4" placeholder="Enter binary code here..."></textarea>
+        <br>
+        <label for="debugging">
+            <input type="checkbox" id="debugging" name="debugging"> Enable Debugging
+        </label>
+        <br>
+        <button id="computingBtn">Computing</button>
+    </div>
+    <div>
+        <h2>Output</h2>
+        <pre id="computingOut">Output...</pre>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

@@ -33,6 +33,6 @@ const assemblyCode = document.getElementById("assembly");
 assembleBtn.addEventListener("click", function () {
     const assembler = new Assembler(assemblyCode.value);
     assembler.assembling();
-    console.log(assembler.labels);
+    textarea.value = assembler.m_Out;
 });
 

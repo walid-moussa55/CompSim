@@ -37,12 +37,12 @@ class Assembler {
             let value = parts[1];
             if(opcodeDictionary[instruction] !== undefined){
                 let word = "";
-                word += opcodeDictionary[instruction].toString(16).padStart(2,'0');
                 if(this.m_labels[value] !== undefined){
                     word += this.m_labels[value].toString(16).padStart(2,"0");
                 }else if(!isNaN(parseInt(value))){
                     word += parseInt(value).toString(16).padStart(2,"0");
                 }else{word += "00";}
+                word += opcodeDictionary[instruction].toString(16).padStart(2,'0');
                 hexCode.push(word);
             }
             else if(!isNaN(parseInt(instruction))){

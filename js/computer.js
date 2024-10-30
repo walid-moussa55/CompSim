@@ -133,7 +133,7 @@ class Computer{
             const opcode = code&0x00ff;
             const value = (code&0xff00)>>8;
             
-            if(debug) this.m_Output+=`instr:${opcode}|value:${value}|regA:${this.cpu.m_regA.getContent()}|regB:${this.cpu.m_regB.getContent()}|pc:${this.cpu.m_PC.outCount()}|sp:${this.cpu.m_SP.outCount()}|this.mem:${this.mem.m_index}\n`;
+            if(debug) this.m_Output+=`instr:${opcode}|value:${value}|regA:${this.cpu.m_regA.getContent()}|regB:${this.cpu.m_regB.getContent()}|pc:${this.cpu.m_PC.outCount()}|sp:${this.cpu.m_SP.outCount()}|mem:${this.mem.m_index}\n`;
     
             if(opcode === 0) {continue;}
             else if(opcode === 1) {//loadA

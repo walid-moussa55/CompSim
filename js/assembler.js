@@ -86,7 +86,7 @@ class Assembler {
                 hexCode.push(word);
             }
             else if(!isNaN(parseInt(instruction))){
-                hexCode.push(prseInt(instruction).toString(16).padStart(4,"0"));
+                hexCode.push(parseInt(instruction).toString(16).padStart(4,"0"));
             }
         }
         this.m_Out = hexCode.join("");

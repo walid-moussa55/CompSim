@@ -5,8 +5,8 @@ jmp start
 7
 
 :mod
-popB
 popA
+popB
 :loop
 cmpAB
 jl end

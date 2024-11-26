@@ -4,9 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> Home - Computer Simulator</title>
-    <link rel="stylesheet" href="./styles/style.css">
+    <link rel="stylesheet" href="./style/style.css">
     <script src="js/computer.js"></script>
     <script src="js/assembler.js"></script>
+    <script src="js/compiler.js"></script>
 </head>
 <body>
     <header>
@@ -15,13 +16,19 @@
             <ul>
                 <li><a href="#home">Home</a></li>
                 <li><a href="./about.html">About</a></li>
-                <li><a href="#computer">Start</a></li>
+                <li><a href="#compiler">Start</a></li>
             </ul>
         </nav>
     </header>
     <div class="about">
         <p>This site going to help understanding computer architechture and how it work.</p>
         <a href="about.html"><button>Learn about</button></a>
+    </div>
+    <div id="compiler">
+        <h2>Programming Code</h2>
+        <textarea name="progcode" id="progcode" cols="200" rows="4" placeholder="Enter programing code here..."></textarea>
+        <br>
+        <button id="compilingBtn">Compiling</button>
     </div>
     <div id="computer">
         <h2>Assembly</h2>

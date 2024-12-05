@@ -19,14 +19,17 @@ const opcodeDictionary = {
     "jmp":   0x27, "jz":    0x28, "jac": 0x29, "jsc": 0x2a, "je": 0x2b, "jn": 0x2c, "jg": 0x2d, "jl": 0x2e,
     "outa":  0x2f, "outb":  0x30,
     "hlt":   0x31,
-    "movab": 0x32, "movba": 0x33,
-    "jmpa":  0x34, "jmpb":  0x35,
-    "laa":   0x36, "lab":   0x37,
-    "ina":   0x38, "inb":   0x39,
-    "dea":   0x3a, "deb":   0x3b,
-    "ldaa":  0x3c, "ldab":  0x3d, "ldba": 0x3e,"ldbb": 0x3f,
-    "testa": 0x40, "testb": 0x41,
-    "ldva":  0x42, "ldvb":  0x43
+    "movab": 0x32, "movba": 0x33, // move a/b to b/a
+    "jmpa":  0x34, "jmpb":  0x35, // jmp to a/b
+    "laa":   0x36, "lab":   0x37, // move PC to a/b
+    "ina":   0x38, "inb":   0x39, // incriment a/b
+    "dea":   0x3a, "deb":   0x3b, // decriment a/b
+    "ldaa":  0x3c, "ldab":  0x3d, "ldba": 0x3e,"ldbb": 0x3f, // load a/b/a/b from address in a/a/b/b
+    "stab":  0x40, "stba":  0x41, // store a/b on address on b/a
+    "ldva":  0x42, "ldvb":  0x43, // load next word to a/b
+    "mspa":  0x44, "mspb":  0x45, // move stack pointer to a ou b
+    "pop":   0x46,
+    "testa": 0x47, "testb": 0x48, // test the value of a/b
 };
 
 class Assembler {
@@ -41,8 +44,9 @@ class Assembler {
         // Step 1: Find labels and their addresses
         let address = 0;
         for(let line of assemblyCodeStr){
-            if(line.startsWith(':')){
-                let label = line.substring(1);
+            line = line.split(";")[0].trim(); 
+            if(line.endsWith(":")){
+                let label = line.slice(0, -1);
                 this.m_labels[label] = address;
             }
             else{
@@ -52,24 +56,32 @@ class Assembler {
         // Step 2: Generate binary code
         let hexCode = [];
         for(let line of assemblyCodeStr){
-            if(line.startsWith(':')){
+            if(line.endsWith(':')){
                 continue;
             }
+            line = line.split(";")[0].trim(); 
+            if (line === "") continue; // Skip empty lines
             let parts = line.split(" ");
             let instruction = parts[0];
-            let value = parts[1];
+            let value = parts[1] || null;
             if(opcodeDictionary[instruction] !== undefined){
                 let word = "";
                 if(this.m_labels[value] !== undefined){
                     word += this.m_labels[value].toString(16).padStart(2,"0");
                 }else if(!isNaN(parseInt(value))){
                     word += value;
-                }else{word += "00";}
+                }else if (value === null || value === ""){word += "00";}
+                else{
+                    throw new Error(`Assembler Error : Unknown label ${value}`);
+                }
                 word += opcodeDictionary[instruction].toString(16).padStart(2,'0');
                 hexCode.push(word);
             }
             else if(!isNaN(parseInt(instruction))){
                 hexCode.push(parseInt(instruction).toString(16).padStart(4,"0"));
+            }
+            else if (!(instruction in opcodeDictionary)) {
+                throw new Error(`Assembler Error : Unknown opcode ${instruction}`);
             }
         }
         this.m_Out = hexCode.join("");

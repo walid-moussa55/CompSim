@@ -30,7 +30,8 @@ computingBtn.addEventListener('click', function() {
     const value = textarea.value.replace(/ /g, '');
     const com = new Computer(value);
     com.computing(debbugCHBX.checked);
-    computingOut.innerText = com.m_Output;
+    computingOut.innerText = "";
+    computingOut.innerHTML = com.m_Output;
 });
 
 const assembleBtn = document.getElementById('assembleBtn');
@@ -38,7 +39,8 @@ const assemblyCode = document.getElementById("assembly");
 assembleBtn.addEventListener("click", function () {
     const assembler = new Assembler(assemblyCode.value);
     assembler.assembling();
-    textarea.innerText = assembler.m_Out;
+    textarea.value = "";
+    textarea.value = assembler.m_Out;
     set_seperate();
 });
 
@@ -47,5 +49,22 @@ const compileBtn = document.getElementById('compilingBtn')
 compileBtn.addEventListener('click', function(){
     const compiler = new Compiler(progcode.value);
     compiler.compiling();
+    assemblyCode.value = "";
+    assemblyCode.value = compiler.m_Out;
+    
+});
+
+const progcode1 = document.getElementById('progcode');
+const runningBtn = document.getElementById('runningBtn');
+runningBtn.addEventListener('click', function(){
+    const compiler = new Compiler(progcode1.value);
+    compiler.compiling();
+    const assembler = new Assembler(compiler.m_Out);
+    assembler.assembling();
+    const value = assembler.m_Out.replace(/ /g, '');
+    const com = new Computer(value);
+    com.computing(debbugCHBX.checked);
+    computingOut.innerHTML = com.m_Output;
+    
 });
 

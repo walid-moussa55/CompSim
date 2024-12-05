@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assembly-like Language Instructions</title>
+    <link rel="stylesheet" href="../style/style.css">
+</head>
+<body>
+    <header>
+        <h1>Assembly-like Language: Instruction Set</h1>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="./documentation.html">Documentation</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <h2>Introduction</h2>
+            <p>The assembly-like language is a low-level programming language designed to interact with the computer’s hardware. It uses mnemonics for machine-level operations. Each mnemonic is associated with a specific machine instruction, allowing programmers to control various hardware components directly. Below is the list of available instructions and their respective functions.</p>
+        </section>
+
+        <section>
+            <h2>Instruction Set</h2>
+
+            <h3>1. Data Movement Instructions</h3>
+            <p>These instructions are used to move data between registers, memory locations, or the stack:</p>
+            <ul>
+                <li><strong>nop (0x00)</strong>: No operation.</li>
+                <li><strong>lda [address](0x01)</strong>: Load data into register A.</li>
+                <li><strong>ldb [address](0x02)</strong>: Load data into register B.</li>
+                <li><strong>sta [address](0x03)</strong>: Store data from register A into memory.</li>
+                <li><strong>stb [address](0x04)</strong>: Store data from register B into memory.</li>
+                <li><strong>movab (0x32)</strong>: Move data from register A to B.</li>
+                <li><strong>movba (0x33)</strong>: Move data from register B to A.</li>
+                <li><strong>mspa (0x44)</strong>: Move stack pointer to register A.</li>
+                <li><strong>mspb (0x45)</strong>: Move stack pointer to register B.</li>
+                <li><strong>ldaa (0x3c)</strong>: Load data from address in register A to A.</li>
+                <li><strong>ldab (0x3d)</strong>: Load data from address in register A to B.</li>
+                <li><strong>ldba (0x3e)</strong>: Load data from address in register B to A.</li>
+                <li><strong>ldbb (0x3f)</strong>: Load data from address in register B to B.</li>
+                <li><strong>stab (0x40)</strong>: Store data from register A into address in B.</li>
+                <li><strong>stba (0x41)</strong>: Store data from register B into address in A.</li>
+            </ul>
+
+            <h3>2. Arithmetic Instructions</h3>
+            <p>These instructions perform arithmetic operations:</p>
+            <ul>
+                <li><strong>addab (0x05)</strong>: Add data in registers A and B.</li>
+                <li><strong>addaa (0x06)</strong>: Add data in register A to itself.</li>
+                <li><strong>addbb (0x07)</strong>: Add data in register B to itself.</li>
+                <li><strong>subab (0x09)</strong>: Subtract data in register B from register A.</li>
+                <li><strong>subba (0x0a)</strong>: Subtract data in register A from register B.</li>
+                <li><strong>mulab (0x0b)</strong>: Multiply data in registers A and B.</li>
+                <li><strong>mulaa (0x0c)</strong>: Multiply data in register A to itself.</li>
+                <li><strong>mulbb (0x0d)</strong>: Multiply data in register B to itself.</li>
+                <li><strong>divab (0x0f)</strong>: Divide data in register A by data in register B.</li>
+                <li><strong>divba (0x10)</strong>: Divide data in register B by data in register A.</li>
+            </ul>
+
+            <h3>3. Logical Instructions</h3>
+            <p>These instructions perform bitwise operations:</p>
+            <ul>
+                <li><strong>nota (0x11)</strong>: Perform bitwise NOT on register A.</li>
+                <li><strong>notb (0x12)</strong>: Perform bitwise NOT on register B.</li>
+                <li><strong>andab (0x13)</strong>: Perform bitwise AND between registers A and B.</li>
+                <li><strong>andba (0x14)</strong>: Perform bitwise AND between registers B and A.</li>
+                <li><strong>orab (0x15)</strong>: Perform bitwise OR between registers A and B.</li>
+                <li><strong>orba (0x16)</strong>: Perform bitwise OR between registers B and A.</li>
+                <li><strong>xorab (0x17)</strong>: Perform bitwise XOR between registers A and B.</li>
+                <li><strong>xoraa (0x18)</strong>: Perform bitwise XOR on register A.</li>
+                <li><strong>xorbb (0x19)</strong>: Perform bitwise XOR on register B.</li>
+                <li><strong>xorba (0x1a)</strong>: Perform bitwise XOR between registers B and A.</li>
+            </ul>
+
+            <h3>4. Shift Instructions</h3>
+            <p>These instructions shift the bits of the data in the registers:</p>
+            <ul>
+                <li><strong>shra (0x1b)</strong>: Shift register A’s bits to the right.</li>
+                <li><strong>shrb (0x1c)</strong>: Shift register B’s bits to the right.</li>
+                <li><strong>shla (0x1d)</strong>: Shift register A’s bits to the left.</li>
+                <li><strong>shlb (0x1e)</strong>: Shift register B’s bits to the left.</li>
+            </ul>
+
+            <h3>5. Comparison Instructions</h3>
+            <p>These instructions compare the data in registers A and B:</p>
+            <ul>
+                <li><strong>cmpab (0x1f)</strong>: Compare data in registers A and B.</li>
+                <li><strong>cmpba (0x20)</strong>: Compare data in registers B and A.</li>
+            </ul>
+
+            <h3>6. Stack and Control Flow Instructions</h3>
+            <p>These instructions control the flow of the program or manage the stack:</p>
+            <ul>
+                <li><strong>pusha (0x21)</strong>: Push register A onto the stack.</li>
+                <li><strong>pushb (0x22)</strong>: Push register B onto the stack.</li>
+                <li><strong>popa (0x23)</strong>: Pop data from the stack into register A.</li>
+                <li><strong>popb (0x24)</strong>: Pop data from the stack into register B.</li>
+                <li><strong>pop (0x46)</strong>: Pop data from the stack.</li>
+                <li><strong>call [address](0x25)</strong>: Call a subroutine (jump to address).</li>
+                <li><strong>ret (0x26)</strong>: Return from subroutine.</li>
+                <li><strong>jmp [address](0x27)</strong>: Jump to a specific address.</li>
+                <li><strong>jz [address](0x28)</strong>: Jump if zero flag is set.</li>
+                <li><strong>jac [address](0x29)</strong>: Jump if carry flag of operation is set.</li>
+                <li><strong>jsc [address](0x2a)</strong>: Jump if carry flag of bit-wise shift is set.</li>
+                <li><strong>je [address](0x2b)</strong>: Jump if equal flag is set.</li>
+                <li><strong>jn [address](0x2c)</strong>: Jump if not equal flag is set.</li>
+                <li><strong>jg [address](0x2d)</strong>: Jump if greater flag is set.</li>
+                <li><strong>jl [address](0x2e)</strong>: Jump if less flag is set.</li>
+            </ul>
+
+            <h3>7. I/O and Miscellaneous Instructions</h3>
+            <p>These instructions are used for input/output and other operations:</p>
+            <ul>
+                <li><strong>outa (0x2f)</strong>: Output data from register A.</li>
+                <li><strong>outb (0x30)</strong>: Output data from register B.</li>
+                <li><strong>hlt (0x31)</strong>: Halt the program.</li>
+                <li><strong>ina (0x38)</strong>: Increment register A by 1.</li>
+                <li><strong>inb (0x39)</strong>: Increment register B by 1.</li>
+                <li><strong>dea (0x3a)</strong>: Decrement register A by 1.</li>
+                <li><strong>deb (0x3b)</strong>: Decrement register B by 1.</li>
+                <li><strong>ldva (0x42)</strong>: Load next word into register A.</li>
+                <li><strong>ldvb (0x43)</strong>: Load next word into register B.</li>
+                <li><strong>testa (0x47)</strong>: Test the value of register A.</li>
+                <li><strong>testb (0x48)</strong>: Test the value of register B.</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Computer Simulator. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Computer Architecture</title>
+    <link rel="stylesheet" href="../style/style.css">
+</head>
+<body>
+    <header>
+        <h1>Computer Simulation</h1>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="./documentation.html">Documentation</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="about">
+        <h2>About Computer Architecture</h2>
+        <p>Computer architecture refers to the design and structure of a computer's key components and how they interact to perform various tasks. Let’s explore the major components of a computer: the CPU, memory, and output system, along with their internal subcomponents and roles.</p>
+        
+        <h3>Central Processing Unit (CPU)</h3>
+        <p>The CPU, often referred to as the brain of the computer, is responsible for executing instructions and performing calculations. It has several important subcomponents:</p>
+        <ul>
+            <li>
+                <strong>Register A and Register B:</strong> These are small storage areas inside the CPU used to temporarily hold data during processing. Register A and Register B allow the CPU to quickly access and manipulate values for calculations or comparisons.
+            </li>
+            <li>
+                <strong>Program Counter (PC):</strong> The Program Counter keeps track of the address of the next instruction to execute. It ensures the CPU processes instructions in the correct sequence unless directed to jump to a specific location (e.g., in loops or function calls).
+            </li>
+            <li>
+                <strong>Stack Pointer (SP):</strong> The Stack Pointer manages the memory stack, which is used for storing temporary data such as return addresses, variables, and function parameters during program execution.
+            </li>
+            <li>
+                <strong>Instruction Register:</strong> This register holds the instruction currently being executed. It allows the CPU to decode and execute commands one step at a time.
+            </li>
+            <li>
+                <strong>Arithmetic Logic Unit (ALU):</strong> The ALU performs all arithmetic (addition, subtraction, multiplication, division) and logical (AND, OR, NOT, comparisons) operations required by the program. It is the primary computation engine of the CPU.
+            </li>
+        </ul>
+        
+        <h3>Memory</h3>
+        <p>Memory is where data and instructions are stored temporarily while the CPU processes them. The main components of the memory system are:</p>
+        <ul>
+            <li>
+                <strong>Memory Address Register (MAR):</strong> This register holds the address in memory where data needs to be fetched or stored. It allows the CPU to locate specific memory cells during read or write operations.
+            </li>
+            <li>
+                <strong>Memory Data Register (MDR):</strong> The MDR temporarily holds the data being read from or written to memory. It acts as a bridge between the memory and other CPU components.
+            </li>
+        </ul>
+        <p>The memory system works closely with the CPU to ensure data is available when needed and to store results for further processing.</p>
+        
+        <h3>Output System</h3>
+        <p>The output system is responsible for presenting the results of the CPU's processing to the user. Common examples of output include displaying text on a monitor, printing documents, or sending audio signals to speakers. In the simulator, this is represented as a virtual display where results are shown to help users understand the outcomes of their programs.</p>
+        
+        <h3>Integration of Components</h3>
+        <p>The components of the computer work together in the following way:</p>
+        <ul>
+            <li>The <strong>CPU</strong> fetches instructions from memory and uses its registers, program counter, and ALU to process data.</li>
+            <li>The <strong>Memory</strong> provides the necessary data to the CPU and stores temporary results during processing.</li>
+            <li>The <strong>Output System</strong> displays the final results to the user, making the data accessible and interpretable.</li>
+        </ul>
+        <p>This coordination between the CPU, memory, and output devices forms the backbone of any computing system and is essential for performing tasks efficiently.</p>
+    </div>
+    <footer>
+        <p>&copy; 2024 Computer Simulator. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>

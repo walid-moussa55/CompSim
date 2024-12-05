@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tomato Programming Language</title>
+    <link rel="stylesheet" href="../style/style.css">
+</head>
+<body>
+    <header>
+        <h1>Tomato Programming Language</h1>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="./documentation.html">Documentation</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <h2>Introduction</h2>
+            <p>The <strong>Tomato Programming Language</strong> is a simple, high-level language designed for beginners to explore fundamental programming concepts. It directly integrates with an assembly-like language for low-level operations, making it ideal for learning computer architecture and programming simultaneously.</p>
+        </section>
+
+        <section>
+            <h2>Language Features</h2>
+            <h3>1. Variables (Numbers)</h3>
+            <p>Variables in Tomato are simple and hold numeric values. They are dynamically typed and can be initialized with any number from 0 to 65 535 (depend to computer architecture):</p>
+            <pre>
+let x = 5;
+let y = 10;
+let sum = x + y;
+            </pre>
+            <p>Variables can be reassigned and used in mathematical operations.</p>
+
+            <h3>2. Functions</h3>
+            <p>Functions allow grouping reusable logic. The syntax is straightforward:</p>
+            <pre>
+function add(a, b) {
+    let result = a + b;
+    return result;
+}
+
+let sum = add(3, 4);
+            </pre>
+            <p>Functions can take parameters and return values.</p>
+
+            <h3>3. Conditional Instructions (if, if-else)</h3>
+            <p>Conditional instructions control the program flow based on conditions:</p>
+            <pre>
+if (x > 0) {
+    print(1);
+} else {
+    print(0);
+}
+            </pre>
+            <p>Nested conditions and logical operators are also supported.</p>
+
+            <h3>4. Repetitive Instructions (while)</h3>
+            <p>The <code>while</code> loop repeats a block of code as long as the condition is true:</p>
+            <pre>
+let x = 5;
+while (x > 0) {
+    print(x);
+    x = x - 1;
+}
+            </pre>
+            <h3>5. Comments</h3>
+            <p>Tomato supports two types of comments:</p>
+
+            <h4>Single-Line Comments</h4>
+            <p>Use `//` to comment out a single line:</p>
+            <pre>
+// This is a single-line comment
+let x = 5; // This sets x to 5
+            </pre>
+
+            <h4>Multi-Line Comments</h4>
+            <p>Use `/* ... */` to write comments spanning multiple lines:</p>
+            <pre>
+/*
+This is a multi-line comment.
+It can span several lines
+and is ignored by the interpreter.
+*/
+let x = 5;
+            </pre>
+            <p>Comments are helpful for explaining code, documenting logic, or temporarily disabling parts of the code during debugging.</p>
+        </section>
+
+        <section>
+            <h2>Custom Code Integration</h2>
+            <p>The Tomato language supports embedding assembly-like instructions using <code>%...%</code>. This allows you to write low-level code for precise control:</p>
+            <pre>
+function printAssembly() {
+    %
+    lda x
+    outa
+    %
+}
+            </pre>
+            <p>In this example, the assembly instructions execute directly within the function, making it a hybrid between high- and low-level programming.</p>
+        </section>
+
+        <section>
+            <h2>Examples</h2>
+            <h3>1. Sum</h3>
+            <p>This program calculates the Sum number:</p>
+            <pre>
+function sum(n) {
+    if (n <= 1) {
+        return n;
+    } else {
+        return n + sum(n - 1);
+    }
+}
+
+let result = sum(6);
+print(result); // Output: 21
+            </pre>
+            <h3>2. Factorial</h3>
+            <p>This program calculates the factorial of a number:</p>
+            <pre>
+function factorial(n) {
+    if (n == 0) {
+        return 1;
+    } else {
+        return n * factorial(n - 1);
+    }
+}
+
+let result = factorial(5);
+print(result); // Output: 120
+            </pre>
+
+            
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Computer Simulator. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<Program> ::= <Statement>*
+
+<Statement> ::= <VariableDeclaration>
+             | <VariableAssignment>
+             | <FunctionDeclaration>
+             | <FunctionCall>
+             | <IfStatement>
+             | <WhileLoop>
+             | <CustomCodeBlock>
+             | <Comment>
+
+<VariableDeclaration> ::= "let" <Identifier> "=" <Expression> ";"
+
+<VariableAssignment> ::= <Identifier> "=" <Expression> ";"
+
+<FunctionDeclaration> ::= "function" <Identifier> "(" <Parameters> ")" <BlockStatement>
+
+<FunctionCall> ::= <Identifier> "(" <Arguments> ")" ";"
+
+<Parameters> ::= <Identifier> ("," <Identifier>)*
+
+<Arguments> ::= <Expression> ("," <Expression>)*
+
+<BlockStatement> ::= "{" <Statement>* "}"
+
+<IfStatement> ::= "if" "(" <Condition> ")" <BlockStatement> [ "else" <BlockStatement> ]
+
+<WhileLoop> ::= "while" "(" <Condition> ")" <BlockStatement>
+
+<CustomCodeBlock> ::= "%" <AssemblyInstruction>* "%"
+
+<Comment> ::= <LineComment> | <MultiLineComment>
+
+<LineComment> ::= "//" <Character>* "\n"
+
+<MultiLineComment> ::= "/*" <Character>* "*/"
+
+
+<Expression> ::= <Literal>
+              | <Identifier>
+              | <BinaryExpression>
+              | <FunctionCall>
+
+<BinaryExpression> ::= <Expression> <Operator> <Expression>
+
+<Condition> ::= <Expression> <ComparisonOperator> <Expression>
+
+<Operator> ::= "+" | "-" | "*" | "/" | "%"
+
+<ComparisonOperator> ::= "==" | "!=" | ">" | "<" | ">=" | "<="
+
+<Literal> ::= <Number>
+
+<AssemblyInstruction> ::= "nop" 
+                       | "lda" <Identifier> 
+                       | "sta" <Identifier>
+                       | "addab"
+                       | "hlt"
+                       | ...
+
+<Identifier> ::= [a-zA-Z_][a-zA-Z0-9_]*
+
+<Number> ::= [0-9]+
+

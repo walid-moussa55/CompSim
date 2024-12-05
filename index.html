@@ -17,26 +17,43 @@
                 <li><a href="#home">Home</a></li>
                 <li><a href="./about.html">About</a></li>
                 <li><a href="#compiler">Start</a></li>
+                <li><a href="./documentations/documentation.html">Documentation</a></li>
             </ul>
         </nav>
     </header>
-    <div class="about">
-        <p>This site going to help understanding computer architechture and how it work.</p>
-        <a href="about.html"><button>Learn about</button></a>
-    </div>
-    <div id="compiler">
+    <section id="intro">
+        <h2>Welcome to the Computer Simulator</h2>
+        <p>
+            This simulation tool is designed to help you understand the core principles of computer architecture, 
+            programming, and machine-level operations. With this simulator, you can write high-level code, compile 
+            it into assembly, assemble it into machine code, and run it on a virtual computer.
+        </p>
+        <p>
+            Explore how programming translates into the inner workings of a CPU, experiment with custom instructions, 
+            and debug your programs with real-time insights.
+        </p>
+    </section>
+    <section class="about">
+        <p>
+            Want to learn more about how this works? Dive into the concepts behind modern computer architecture, 
+            including instruction sets, memory management, and more.
+        </p>
+        <a href="./documentations/documentation.html"><button>Learn about</button></a>
+    </section>
+    <section id="compiler">
         <h2>Programming Code</h2>
-        <textarea name="progcode" id="progcode" cols="200" rows="4" placeholder="Enter programing code here..."></textarea>
+        <textarea name="progcode" id="progcode" style="height: 250px;" cols="200" rows="4" placeholder="Enter programming code here..."></textarea>
         <br>
-        <button id="compilingBtn">Compiling</button>
-    </div>
-    <div id="computer">
+        <a href="#assembler"><button id="compilingBtn">Compiling</button></a>
+        <a href="#outputing"><button id="runningBtn">Run</button></a>
+    </section>
+    <section id="assembler">
         <h2>Assembly</h2>
         <textarea name="assembly" id="assembly" cols="200" rows="4" placeholder="Enter assembly code here..."></textarea>
         <br>
-        <button id="assembleBtn">Assembling</button>
-    </div>
-    <div>
+        <a href="#computer"><button id="assembleBtn">Assembling</button></a>
+    </section>
+    <section id="computer">
         <h2>Computer</h2>
         <textarea name="binarycode" id="binarycode" cols="67" rows="4" placeholder="Enter binary code here..."></textarea>
         <br>
@@ -44,13 +61,19 @@
             <input type="checkbox" id="debugging" name="debugging"> Enable Debugging
         </label>
         <br>
-        <button id="computingBtn">Computing</button>
-    </div>
-    <div>
+        <a href="#outputing"><button id="computingBtn">Computing</button></a>
+    </section>
+    <section id="outputing">
         <h2>Output</h2>
         <pre id="computingOut">Output...</pre>
-    </div>
+    </section>
 
     <script src="js/script.js"></script>
+    <footer>
+        <p>&copy; 2024 Computer Simulator. All Rights Reserved.</p>
+        <p>
+            Visit our <a href="./documentations/documentation.html">Documentation</a> for more details.
+        </p>
+    </footer>
 </body>
 </html>
